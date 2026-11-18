@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:output method="html" encoding="UTF-8" indent="yes"/>
+
+  <xsl:template match="/document">
+    <html>
+      <head>
+        <title><xsl:value-of select="titre"/></title>
+        <link rel="stylesheet" href="style.css"/>
+      </head>
+      <body>
+        <h1><xsl:value-of select="titre"/> - Mamadou Ndiaye, né le 05/09/2003</h1>
+        <p class="infos">Cote : <xsl:value-of select="@cote"/> - Année : <xsl:value-of select="annee"/> - Prix : <xsl:value-of select="prix"/> FCFA</p>
+        <h2>Auteurs</h2>
+        <ul>
+          <xsl:apply-templates select="auteur">
+            <xsl:sort select="."/>
+          </xsl:apply-templates>
+        </ul>
+        <p class="etat">État :
+          <xsl:choose>
+            <xsl:when test="@disponible='true'">Disponible</xsl:when>
+            <xsl:otherwise>Indisponible</xsl:otherwise>
+          </xsl:choose>
+        </p>
+      </body>
+    </html>
+  </xsl:template>
+
+  <xsl:template match="auteur">
+    <li><xsl:value-of select="."/></li>
+  </xsl:template>
+
+</xsl:stylesheet>

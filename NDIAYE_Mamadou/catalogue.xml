@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Projet final Mamadou Ndiaye, né le 05/09/2003 -->
+<document cote="LIV-014" type="livre" disponible="true"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="catalogue.xsd">
+  <titre>Le Jardin des Sables</titre>
+  <auteur>Binta Seck</auteur>
+  <auteur>Awa Sy</auteur>
+  <annee>2012</annee>
+  <prix>3500</prix>
+</document>
